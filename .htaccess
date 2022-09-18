@@ -1,0 +1,7 @@
+Options All -Indexes
+ErrorDocument 404 /404.php
+
+<FilesMatch "\.(htaccess|json)$">
+  Deny From All
+</FilesMatch>
+
