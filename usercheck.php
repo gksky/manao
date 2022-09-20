@@ -9,7 +9,6 @@ require_once('autoloader.php'); // автозагрузка классов
  * объект типа User и отображается кнопка выхода.
  */
 $userlogin = null;
-$logoutVisibility = false;
 $userlogin = (!empty($_SESSION['user'])) ? $_SESSION['user'] : $_COOKIE['ManaoUser'];
 if ($userlogin)
 {
@@ -20,10 +19,6 @@ if ($userlogin)
         $_SESSION['auth'] = null;
         $_SESSION['user'] = null;
         setcookie("ManaoUser", "", time() - 3600);
-    }
-    else
-    {
-        $logoutVisibility = true;
     }
 }
 

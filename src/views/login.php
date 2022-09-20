@@ -1,19 +1,17 @@
-<?php if (empty($_SESSION['auth'])): ?>
-  <form id="loginForm" class="form">
+<form id="loginForm" class="form">
     <div class="formItem">
-      <label>Login:
+        <label>Login:
         <input name="login"><span id="errLogin" class="error"></span>
-      </label>
+        </label>
     </div>
     <div class="formItem">
-      <label>Password:
+        <label>Password:
         <input name="password" type="password"><span id="errPassword" class="error"></span>
-      </label>
+        </label>
     </div>
     <input class="submitButton" type="submit">
-  </form>
-<?php endif; ?>
+</form>
 
-  <script src="/src/js/login.js"></script>
+<script src="/src/js/login.js"></script>
 </body>
 </html>
