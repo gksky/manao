@@ -13,7 +13,7 @@ class User
      */
     public function __construct(array $userdata)
     {
-        $this->id = ($userdata['id']) ? $userdata['id'] : null;
+        $this->id = (isset($userdata['id'])) ? $userdata['id'] : null;
         $this->login = $userdata['login'];
         $this->password = $userdata['password'];
         $this->email = $userdata['email'];

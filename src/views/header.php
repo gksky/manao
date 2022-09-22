@@ -16,10 +16,10 @@
       <li class="nav item"><a href="/">Home</a></li>
       <li class="nav item"><a href="/register.php">Registration</a></li>
       <li class="nav item"><a href="/login.php">Login</a></li>
-      <?php if ($user): ?><li class="nav item"><a href="/logout.php">Logout</a></li><?php endif; ?>
+      <?php if (isset($user)): ?><li class="nav item"><a href="/logout.php">Logout</a></li><?php endif; ?>
     </ul>
   </header>
-  <?php if ($user): ?>
+  <?php if (isset($user)): ?>
     <h2>
       <?php echo "Hello, {$user->getName()}!"; ?>
     </h2>

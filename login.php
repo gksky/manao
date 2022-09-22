@@ -3,7 +3,7 @@
 $pageTitle = 'Login - Users';
 require(__DIR__ . '/usercheck.php');
 
-if (!$user)
+if (!isset($user))
 {
     require(__DIR__ . '/src/views/login.php');
 }

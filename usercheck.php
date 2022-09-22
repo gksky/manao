@@ -8,9 +8,20 @@ require_once('autoloader.php'); // автозагрузка классов
  * которого нет в базе - его сессия закрывается. Иначе - создается 
  * объект типа User и отображается кнопка выхода.
  */
-$userlogin = null;
-$userlogin = (!empty($_SESSION['user'])) ? $_SESSION['user'] : $_COOKIE['ManaoUser'];
-if ($userlogin)
+if (isset($_SESSION['user']))
+{
+    $userlogin = $_SESSION['user'];
+}
+elseif (isset($_COOKIE['ManaoUser']))
+{
+    $userlogin = $_COOKIE['ManaoUser'];
+}
+else
+{
+    $userlogin = null;
+}
+
+if (isset($userlogin))
 {
     $db = new Database();
     $user = ($db) ? $db->selectUser('login', $userlogin) : false;
